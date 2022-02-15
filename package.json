@@ -1,7 +1,7 @@
 {
   "name": "theredstream",
-  "version": "0.1.0",
-  "description": "\"# theredstream\"",
+  "version": "0.4.0",
+  "description": "TheRedStream Project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Thibault-MJS/theredstream.git"
   },
-  "author": "Thibault.MJS, Ezquiel",
+  "author": "Thibault.MJS, Ezequiel",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Thibault-MJS/theredstream/issues"
