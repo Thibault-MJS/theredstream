@@ -3,17 +3,20 @@ import pkg from 'body-parser';
 import { config } from 'dotenv';
 
 import ArticleRoutes from './src/routes/articles.routes.js';
-import Errors from './src/routes/errors.routes.js';
+import ErrorsRoutes from './src/routes/errors.routes.js';
 
 const app = express();
 const {json, urlencoded} = pkg;
 
-app.use(urlencoded({ entended: true })); // Encode l'url afin d'avoir un meilleur traitement des url contenant des caractères spéciaux
-app.use(json()); // Gère le format json
+// App
+app.use(urlencoded({ entended: true })); // Encode URL to get a better treatement with specials chars.
+app.use(json()); // Includes json format
 
 // Routes
-app.use("/api/articles", ArticleRoutes);
-app.use(Errors);
+app.get('/', (req, res) => res.redirect('/home')); // Default
+
+app.use("/api/articles", ArticleRoutes); // Articles
+app.use(ErrorsRoutes); // Errors
 
 config();
 app.listen(process.env.DEV_PORT);
